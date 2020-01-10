@@ -1,0 +1,19 @@
+:host{
+  background: #ffffff;
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .input-container{
+      width: 100%;
+      margin: 10px auto;
+    }
+
+  }
+}
+mat-card{
+  width: 80%;
+  max-width: 400px;
+  margin: 70px auto;
+}
+

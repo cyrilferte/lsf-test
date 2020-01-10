@@ -1,1 +1,19 @@
-<p>form works!</p>
+
+<mat-card>
+  <form [formGroup]="userForm" (submit)="saveUser()">
+
+    <mat-form-field class="input-container">
+      <input matInput #fiscal formControlName="fiscalNum" maxlength="256" placeholder="Numéro fiscal" type="number">
+      <mat-hint align="start"><strong>Disponible sur vos declarations d'impôts</strong> </mat-hint>
+      <mat-hint align="end">{{fiscal.value.length}} / 13</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="input-container">
+      <input matInput #avis formControlName="avisNum" maxlength="256" placeholder="Référence de l'avis" >
+      <mat-hint align="start"><strong>Disponible sur vos declarations d'impôts</strong> </mat-hint>
+      <mat-hint align="end">{{avis.value.length}} / 13</mat-hint>
+    </mat-form-field>
+    <button type="submit" [disabled]="!userForm.valid" mat-raised-button color="primary">generer</button>
+  </form>
+
+</mat-card>
+
