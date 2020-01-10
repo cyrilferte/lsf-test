@@ -1,0 +1,18 @@
+table {
+  width: 95%;
+  margin:30px auto;
+}
+.user-data-container, .user-action-container{
+  max-width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  button{
+    margin: 20px;
+  }
+}
+.user-container{
+  display: flex;
+  margin: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+}

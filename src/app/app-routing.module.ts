@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {FormComponent} from './form/form.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
     path: 'form',
     component: FormComponent
   },
-
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   { path: '**', component: PageNotFoundComponent }];
 
 @NgModule({

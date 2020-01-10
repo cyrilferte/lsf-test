@@ -1,0 +1,68 @@
+<div class="user-container" *ngIf="user">
+  <mat-card  class="user-data-container">
+    <div>
+      prenom: {{user.firstName}}
+    </div>
+    <div>
+      nom:  {{user.lastName}}
+    </div>
+    <div>
+      personne a charge: {{user.peopleNum}}
+    </div>
+    <div>
+      revenue brut: {{user.grossRevenue}}
+    </div>
+    <div>
+      niveau de vie: {{user.level}}
+    </div>
+
+    <div>
+      subscribe :  {{user.subscribe}}
+    </div>
+  </mat-card>
+  <mat-card  class="user-action-container">
+    <div> la demande a été pris en compte</div>
+    <button (click)="redirectToLink('mailto:contact@lsf-energie.fr')" mat-raised-button color="primary">Email</button>
+    <button (click)="redirectToLink('https://calendly.com/cferte/meeting')" mat-raised-button color="primary">Rendez-vous</button>
+  </mat-card>
+</div>
+
+  <table mat-table [dataSource]="users" class="mat-elevation-z8"  *ngIf="users">
+
+    <ng-container matColumnDef="Prénom">
+      <th mat-header-cell *matHeaderCellDef> Prénom </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Revenue">
+      <th mat-header-cell *matHeaderCellDef> Revenue </th>
+      <td mat-cell *matCellDef="let element"> {{element.grossRevenue}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Level">
+      <th mat-header-cell *matHeaderCellDef> Level </th>
+      <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Subscribe">
+      <th mat-header-cell *matHeaderCellDef> Subscribe </th>
+      <td mat-cell *matCellDef="let element"> {{element.subscribe}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
