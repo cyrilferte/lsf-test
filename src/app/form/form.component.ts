@@ -128,7 +128,7 @@ export class FormComponent implements OnInit {
         this.calcLevel(this.userForm2.controls.grossRevenue.value, this.userForm2.controls.numPeople.value),
         this.userForm2.controls.numPeople.value
       ).subscribe(res => {
-        this.router.navigate(['/login?email=' + this.userForm2.value.email]);
+        this.router.navigate(['/login'], { queryParams: {email: this.userForm2.value.email}} );
       });
 
     });
