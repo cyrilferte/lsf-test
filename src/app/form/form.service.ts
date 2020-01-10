@@ -15,4 +15,16 @@ export class FormService {
     });
   }
 
+   createStripeUser(email, paymentMethod, firstName, lastName, grossRevenue, level, peopleNum) {
+    return this.http.put('https://gon6d8cld0.execute-api.eu-west-3.amazonaws.com/test/users', {
+          email,
+            firstName,
+            lastName,
+              grossRevenue ,
+               level     ,
+                peopleNum,
+                paymentMethod
+        });
+    }
+
 }
